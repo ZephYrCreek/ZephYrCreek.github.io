@@ -53,7 +53,7 @@ onBeforeUnmount(releaseLocalFile)
     <div class="music-heading">
       <div class="music-icon" aria-hidden="true">♫</div>
       <div>
-        <p class="music-eyebrow">NOW PLAYING</p>
+        <p class="music-eyebrow">YOUR READING SOUNDTRACK</p>
         <h2>{{ trackLabel }}</h2>
       </div>
     </div>
@@ -68,7 +68,7 @@ onBeforeUnmount(releaseLocalFile)
     />
 
     <p v-else class="music-empty">
-      站点暂未配置公开歌单。你可以先选择电脑中的音频文件，本地试听不会上传文件。
+      公开歌单还在整理。先从设备中选一首喜欢的歌吧，音频只在本地播放，不会上传。
     </p>
 
     <div v-if="playlist.length" class="music-playlist">
@@ -94,12 +94,14 @@ onBeforeUnmount(releaseLocalFile)
 .music-card {
   position: relative;
   overflow: hidden;
-  padding: 24px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
   background:
-    radial-gradient(circle at 95% 0%, var(--vp-c-brand-soft), transparent 42%),
-    var(--vp-c-bg-soft);
+    radial-gradient(circle at 100% 0%, rgba(112, 200, 168, 0.15), transparent 38%),
+    rgba(255, 255, 255, 0.065);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
 }
 
 .music-heading {
@@ -117,14 +119,14 @@ onBeforeUnmount(releaseLocalFile)
   place-items: center;
   border-radius: 50%;
   color: white;
-  background: linear-gradient(135deg, var(--vp-c-brand-1), #8b5cf6);
-  box-shadow: 0 8px 24px var(--vp-c-brand-soft);
+  background: linear-gradient(135deg, #9b86f4, #4eb28f);
+  box-shadow: 0 10px 28px rgba(103, 83, 205, 0.3);
   font-size: 24px;
 }
 
 .music-eyebrow {
   margin: 0 0 2px;
-  color: var(--vp-c-brand-1);
+  color: rgba(255, 255, 255, 0.48);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -133,7 +135,7 @@ onBeforeUnmount(releaseLocalFile)
 h2 {
   margin: 0;
   border: 0;
-  color: var(--vp-c-text-1);
+  color: #fff;
   font-size: 18px;
   line-height: 1.45;
 }
@@ -147,7 +149,7 @@ h2 {
 
 .music-empty {
   margin: 0 0 18px;
-  color: var(--vp-c-text-2);
+  color: rgba(255, 255, 255, 0.58);
   line-height: 1.7;
 }
 
@@ -160,11 +162,11 @@ h2 {
 
 .music-playlist button,
 .music-file-button {
-  border: 1px solid var(--vp-c-divider);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
   padding: 8px 14px;
-  color: var(--vp-c-text-1);
-  background: var(--vp-c-bg);
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.07);
   font-size: 14px;
   cursor: pointer;
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
@@ -173,9 +175,9 @@ h2 {
 .music-playlist button:hover,
 .music-playlist button.active,
 .music-file-button:hover {
-  border-color: var(--vp-c-brand-1);
-  color: var(--vp-c-brand-1);
-  background: var(--vp-c-brand-soft);
+  border-color: rgba(171, 152, 255, 0.75);
+  color: #fff;
+  background: rgba(171, 152, 255, 0.14);
 }
 
 .music-file-button {

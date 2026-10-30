@@ -43,6 +43,23 @@
   padding: 0 24px;
 }
 
+.VPPage {
+  padding-bottom: 0 !important;
+}
+
+.VPPage .container {
+  max-width: none !important;
+}
+
+.VPPage .content {
+  max-width: none !important;
+  padding: 0 24px !important;
+}
+
+.VPPage .content-container {
+  max-width: none !important;
+}
+
 @media (min-width: 640px) {
   .home-music-wrap {
     padding: 0 48px;
@@ -52,5 +69,11 @@
 @media (min-width: 960px) {
   .home-music-wrap {
     padding: 0 64px;
+  }
+}
+
+@media (max-width: 640px) {
+  .VPPage .content {
+    padding: 0 !important;
   }
 }
